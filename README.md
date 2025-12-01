@@ -62,8 +62,21 @@ python-pptx script → generated_presentation.pptx
       └─ Respond to Webhook → Streamlit (download)
         </pre>
 <div
-        <p class="muted">The workflow exported from n8n implements this chain: Webhook → Google Gemini (LLM) → Agent Node (python-pptx code) → Respond. See workflow JSON included with the repo for exact node configuration. :contentReference[oaicite:0]{index=0}</p>
-      </div>
+        <p class="muted">The workflow exported from n8n implements this chain: Webhook → Google Gemini (LLM) → Agent Node (python-pptx code) → Respond. See workflow JSON included with the repo for exact node configuration. 
+
+
+        
+
+        
+
+<img width="1154" height="525" alt="Screenshot 2025-12-01 163937" src="https://github.com/user-attachments/assets/731dd284-19a2-4e43-8dea-97600f5b2585" />
+
+
+
+  
+
+
+  
 <div
       <div class="card">
         <h3>Installation</h3>
