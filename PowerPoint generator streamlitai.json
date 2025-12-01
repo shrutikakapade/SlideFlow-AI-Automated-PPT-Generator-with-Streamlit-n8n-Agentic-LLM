@@ -1,0 +1,118 @@
+{
+  "name": "PowerPoint generator streamlitai",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "660956d8-966d-4cda-9a3d-93bd524c384e",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e40a2367-b3f3-467e-9ba5-0c9f39e3311b",
+      "name": "Webhook",
+      "webhookId": "660956d8-966d-4cda-9a3d-93bd524c384e"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an AI that writes ONLY python code using the python-pptx library.\n\nBased on the following details, generate Python code that creates a clean, well-formatted PowerPoint presentation with proper slide layouts, bullet points, and no overlapping text boxes:\n\nDetails:\n{{ $json.body.prompt }}\n\nRules:\n- OUTPUT MUST CONTAIN ONLY PYTHON CODE. No explanations.\n- Use python-pptx (from pptx import Presentation, Inches)\n- Use correct slide layouts: title slide, title + content slides, bullet points, sub-bullets\n- Do NOT add unused text frames or shapes\n- Keep spacing clean with no overlapping elements\n- The last line must be: prs.save(\"generated_presentation.pptx\")\n- Do NOT wrap the code in backticks\n- Do NOT explain the code\n\n\nNow generate the python code.\n\nprompt :{{ $json.body.prompt }}",
+        "options": {
+          "systemMessage": "=You are a helpful assistant and you are having a 10+ years of experience in creating ppt based on topic given "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "95817878-6c32-4299-8496-dab9a105061c",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        208,
+        208
+      ],
+      "id": "61723c62-0a9e-4801-b49a-5e9cccdf135d",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "JABx29CCIR5xGBBq",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        608,
+        0
+      ],
+      "id": "d8880c24-fe30-4cbe-a3b2-8770e51d2e50",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "53274884-a1b3-44bd-9917-395efb2bb331",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5c719f4fcdf2c8e3effc271574cd66427209ca56bef062f8814906f9e0661fa9"
+  },
+  "id": "vvIAbweOoE9PIxaa",
+  "tags": []
+}
