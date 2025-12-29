@@ -145,6 +145,12 @@ NEOFLUX AI/
     </footer>
   </div>
 
+  
+
+https://github.com/user-attachments/assets/0cda8435-5dc5-4bd8-8ee7-d49feae6c323
+
+
+
   ## 🚀 Why NEOFLUX AI?
 
 **NEOFLUX AI** represents new intelligence in continuous motion.
