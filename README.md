@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" 
 </head>  
-        <h1>SlideFlow AI — Automated PPT Generator</h1>
-        <p class="lead">SlideFlow AI converts a single text prompt into a complete, professional PowerPoint in seconds using Streamlit, Python, python-pptx, n8n, and an Agentic LLM.</p>
+        <h1>NEOFLUX AI — Automated PPT Generator</h1>
+        <p class="lead">NEOFLUX AI converts a single text prompt into a complete, professional PowerPoint in seconds using Streamlit, Python, python-pptx, n8n, and an Agentic LLM.</p>
       </div>
     </header>
 <div
@@ -100,7 +100,7 @@ python-pptx script → generated_presentation.pptx
 <div
       <div class="card full">
         <h3>n8n Workflow (details)</h3>
-        <p class="muted">The included n8n JSON defines the automation nodes and rules used by SlideFlow AI. Key nodes from the exported workflow:</p>
+        <p class="muted">The included n8n JSON defines the automation nodes and rules used by NEOFLUX AI. Key nodes from the exported workflow:</p>
         <ul>
           <li><strong>Webhook</strong> — receives the Streamlit POST with the user prompt.</li>
           <li><strong>Google Gemini Chat Model</strong> — optional LLM node used as a language model backend.</li>
@@ -113,7 +113,7 @@ python-pptx script → generated_presentation.pptx
       <div class="card">
         <h3>Recommended Repo Layout</h3>
         <pre class="mono">
-SlideFlow-AI/
+NEOFLUX AI/
 ├─ streamlit_app/
 │  └─ app.py
 ├─ n8n_workflow/
@@ -141,8 +141,18 @@ SlideFlow-AI/
       <h3>Contributing</h3>
 <div
     <footer>
-      <div class="muted">Made with Streamlit, python-pptx, n8n & Agentic LLM — SlideFlow AI</div>
+      <div class="muted">Made with Streamlit, python-pptx, n8n & Agentic LLM — NEOFLUX AI</div>
     </footer>
   </div>
+
+  ## 🚀 Why NEOFLUX AI?
+
+**NEOFLUX AI** represents new intelligence in continuous motion.
+
+- **Neo** stands for next-generation artificial intelligence.
+- **Flux** represents the seamless flow from ideas to execution.
+
+The name reflects how NEOFLUX AI continuously transforms user intent into structured, high-quality presentations using agentic AI workflows.
+
 </body>
 </html>
